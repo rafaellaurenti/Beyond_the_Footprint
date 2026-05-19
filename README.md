@@ -51,7 +51,7 @@ malmo-consumption-gap/
 │   ├── Closing_the_urban_consumption_gap_revised_manuscript_v5.docx
 │   └── manuscript_v5_source.md
 │
-└── supplementary/             ← extended parameter tables (forthcoming)
+└── supplementary/             ← extended parameter tables
 ```
 
 ## Quick start
