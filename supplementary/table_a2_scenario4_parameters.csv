@@ -1,0 +1,110 @@
+Category,Domain,Baseline (kg CO₂e/cap),Behavioural reduction,Technological reduction,Combined reduction,Max adoption (L),Adoption speed (k),Inflection year (t₀),Assumption note
+Flights - Passenger flights,Flights,849.8395,0.75,0.7,0.925,1.0,0.4,2030,"All residents fly much less, and aviation becomes less CO2-intensive through alternative fuels."
+Housing - District heating and other energy for heating and cooling,Housing,506.3924,0.1,1.0,1.0,0.95,1.0,2030,95% of households are covered by CCS around 2030.
+Local transport - Direct emissions from vehicle use,Local transport,410.0331,0.0,1.0,1.0,1.0,0.2,2029,100% electric cars by 2050.
+Food and drink - Meat,Food and drink,289.9323,0.8,0.7,0.94,1.0,0.2,2029,90% of residents reduce meat consumption by 80% by 2050; food waste is reduced and production becomes more efficient.
+Housing - Imputed rent for owned permanent dwelling,Housing,240.1408,0.25,0.7,0.7749999999999999,0.75,0.2,2029,"75% of the population lives in 25% less space, but the change is slow because of building lifetimes."
+"Food and drink - Milk, cheese, other dairy products and eggs",Food and drink,229.2876,0.5,0.7,0.85,1.0,0.2,2029,75% of residents reduce dairy consumption by 75% by 2050; food waste is reduced and production becomes more efficient.
+"Other consumption - Hotels, cafés and restaurants",Other consumption,200.3526,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Clothing and shoes - Clothing,Clothing and shoes,177.6083,0.75,0.7,0.925,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+"Food and drink - Vegetables, root crops and legumes",Food and drink,145.0465,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Fuels and lubricants,Local transport,124.8679,0.9,0.9,0.99,1.0,0.2,2029,100% electric cars; lubricants remain.
+Housing - Actual rent for rented permanent dwelling,Housing,124.7562,0.25,0.25,0.4375,1.0,0.2,2029,"75% of the population lives in slightly less space, but the change is slow because of building lifetimes."
+Food and drink - Fruit and nuts,Food and drink,122.7708,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Package holidays","Leisure, sport and culture",121.6209,0.75,0.7,0.925,1.0,0.2,2029,Package holidays are treated as flights.
+Food and drink - Bread and cereal products,Food and drink,104.6514,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Cars,Local transport,104.1669,0.5,0.7,0.85,1.0,0.2,2029,"50% fewer cars by 2050, but each car has the same footprint as today."
+"Food and drink - Sugar, confectionery and desserts",Food and drink,102.6101,0.5,0.7,0.85,1.0,0.2,2029,Sweets and fika consumption are halved for health and climate-footprint reasons.
+"Other consumption - Furniture, furnishings and carpets",Other consumption,93.87308,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Other consumption - Information and communication equipment,Other consumption,85.56549,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Other consumption - Medicines,Other consumption,85.34169,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Ready-made meals and other food products,Food and drink,83.47034,0.5,0.7,0.85,0.75,0.2,2029,Ready-made meals contain less meat and dairy.
+Local transport - Passenger transport by sea,Local transport,75.27207,0.0,0.7,0.7,0.75,0.2,2029,Sea transport becomes more efficient and is increasingly powered by alternative fuels.
+Other consumption - Other appliances and products for personal care,Other consumption,72.39924,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Housing - Electricity,Housing,57.17375,0.25,0.7,0.7749999999999999,1.0,0.2,2029,More renewable energy and energy efficiency in goods reduce emissions despite increased electrification.
+Food and drink - Fish and seafood,Food and drink,56.70087,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Garden products, plants and flowers","Leisure, sport and culture",55.99662,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Housing - Direct emissions from heating,Housing,50.47222,0.0,0.95,0.95,1.0,0.2,2029,100% of households using oil and pellets shift to climate-smart heating.
+Clothing and shoes - Shoes and other footwear,Clothing and shoes,50.41063,0.75,0.7,0.925,1.0,0.2,2029,New purchases are reduced by 75% and production becomes more efficient.
+Other consumption - Information and communication services,Other consumption,47.86256,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Household appliances,Other consumption,42.5664,0.75,0.7,0.925,1.0,0.2,2029,New purchases are reduced by 75% and production becomes more efficient.
+Other consumption - Goods and services for household maintenance,Other consumption,42.47462,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Public transport and other combined trips,Local transport,41.17072,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Wine,Food and drink,39.43027,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+"Leisure, sport and culture - Recreation and sport services","Leisure, sport and culture",38.68849,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Games, toys and hobby articles","Leisure, sport and culture",38.33197,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Food and drink - Oils and fats,Food and drink,37.36086,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Fruit and vegetable juices,Food and drink,34.04544,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Maintenance and repairs,Local transport,33.37569,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Pets and pet products","Leisure, sport and culture",30.02136,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Tobacco,Food and drink,30.00426,0.75,0.7,0.925,1.0,0.2,2029,Tobacco consumption is reduced by 75%.
+Other consumption - Accommodation services,Other consumption,29.12607,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Major durable goods for leisure","Leisure, sport and culture",28.39759,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+"Leisure, sport and culture - Games of chance, betting and lotteries","Leisure, sport and culture",26.75462,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Other consumption - Glassware, tableware and other utensils",Other consumption,26.46434,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Food and drink - Soft drinks,Food and drink,26.06581,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Hairdressing salons and personal grooming establishments,Other consumption,25.57508,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Housing - Imputed rent for holiday homes, other dwellings, garages and storage",Housing,24.46403,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Local transport - Road transport services: car pools, buses and taxis",Local transport,24.06002,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Housing - Maintenance, repair and security",Housing,23.56363,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Equipment for sport, camping and outdoor recreation","Leisure, sport and culture",23.05441,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Other consumption - Household textiles,Other consumption,22.88734,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Local transport - Spare parts and accessories,Local transport,21.64835,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Home and garden tools,Other consumption,20.05375,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Food and drink - Coffee and coffee substitutes,Food and drink,19.9522,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Financial services,Other consumption,19.67818,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Company-car benefit,Local transport,18.5096,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Clothing and shoes - Other garments and clothing accessories,Clothing and shoes,16.67224,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Food and drink - Strong beer,Food and drink,15.00377,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Local transport - Rental of personal transport equipment,Local transport,14.95851,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Other personal effects n.e.c.,Other consumption,14.23978,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Food and drink - Spirits,Food and drink,13.04753,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Local transport - Passenger transport by rail and tram,Local transport,12.47695,0.0,0.7,0.7,1.0,0.2,2029,
+Other consumption - Jewellery and watches,Other consumption,12.24788,0.5,0.7,0.85,1.0,0.2,2029,New purchases are reduced by 50% and production becomes more efficient.
+Local transport - Bicycles,Local transport,11.50822,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Outpatient dental services,Other consumption,10.06935,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Other services,Other consumption,9.468639,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Medical aids and maintenance,Other consumption,9.377794,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Cultural services","Leisure, sport and culture",8.467172,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Home care for older people and people with disabilities,Other consumption,7.755833,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Newspapers and periodicals","Leisure, sport and culture",7.724998,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Books","Leisure, sport and culture",7.58624,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Other outpatient care services,Other consumption,7.461947,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Housing - Direct household emissions,Housing,7.144203,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Low- and medium-strength beer,Food and drink,6.550008,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Parking services,Local transport,5.832175,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Water,Food and drink,5.704631,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Writing and drawing materials","Leisure, sport and culture",5.603584,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Other consumption - Residential care for older people and people with disabilities, excluding health care",Other consumption,5.168192,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Motorcycles,Local transport,5.079291,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Insurance,Other consumption,5.017043,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Clothing and shoes - Clothing materials,Clothing and shoes,4.7143,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Leisure goods: rental, maintenance and repair","Leisure, sport and culture",4.214779,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Medical products,Other consumption,4.067291,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Narcotics,Food and drink,3.772807,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Electric appliances for personal care,Other consumption,3.753629,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Other transport of goods,Local transport,3.523439,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Services for pets","Leisure, sport and culture",3.281919,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Food and drink - Tea, maté and other herbal teas",Food and drink,3.254937,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Photographic and optical equipment","Leisure, sport and culture",3.108459,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Education services,Other consumption,2.819503,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Housing - Actual rents for other dwellings, garages and storage",Housing,2.796477,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Software,Other consumption,1.896521,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Audiovisual media","Leisure, sport and culture",1.877962,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Postal and courier services,Local transport,1.636122,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Other alcoholic beverages,Food and drink,1.514244,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Local transport - Driving lessons, driving licences and vehicle inspections",Local transport,1.354722,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Musical instruments","Leisure, sport and culture",1.248173,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Food and drink - Chocolate drinks,Food and drink,0.902968,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Inpatient curative and rehabilitative services,Other consumption,0.834667,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Road tolls,Local transport,0.802085,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Childcare services,Other consumption,0.747856,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Local transport - Other passenger transport services,Local transport,0.566234,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Preventive care services,Other consumption,0.522673,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Leisure, sport and culture - Miscellaneous printed matter","Leisure, sport and culture",0.504459,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Other consumption - Religious and ritual articles,Other consumption,0.42365,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Housing - Liquid fuels,Housing,0.368585,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Housing - Solid fuels,Housing,0.21005,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Clothing and shoes - Laundry, repair and rental of clothing",Clothing and shoes,0.065814,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+"Clothing and shoes - Cleaning, repair and rental of footwear",Clothing and shoes,0.057527,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.
+Housing - Gas,Housing,0.002579,0.0,0.7,0.7,1.0,0.2,2029,70% reduction through transition to renewable energy.

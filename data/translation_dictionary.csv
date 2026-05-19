@@ -1,0 +1,152 @@
+type,original,english,domain_original,domain_english,item_original,item_english
+category,Flyg - Flygresor,Flights - Passenger flights,Flyg,Flights,Flygresor,Passenger flights
+category,Bostaden - fjärrvärme och annan energi för uppvärmning och kylning,Housing - District heating and other energy for heating and cooling,Bostaden,Housing,fjärrvärme och annan energi för uppvärmning och kylning,District heating and other energy for heating and cooling
+category,Lokala transporter - direkta utsläpp från fordonsanvändning,Local transport - Direct emissions from vehicle use,Lokala transporter,Local transport,direkta utsläpp från fordonsanvändning,Direct emissions from vehicle use
+category,Mat och dryck - kött,Food and drink - Meat,Mat och dryck,Food and drink,kött,Meat
+category,Bostaden - uppskattad hyra för egen bostad (ägd permanentbostad),Housing - Imputed rent for owned permanent dwelling,Bostaden,Housing,uppskattad hyra för egen bostad (ägd permanentbostad),Imputed rent for owned permanent dwelling
+category,"Mat och dryck - mjölk, ost, övriga mejeriprodukter, ägg","Food and drink - Milk, cheese, other dairy products and eggs",Mat och dryck,Food and drink,"mjölk, ost, övriga mejeriprodukter, ägg","Milk, cheese, other dairy products and eggs"
+category,"Övrigt - Hotell, kaféer och restauranger","Other consumption - Hotels, cafés and restaurants",Övrigt,Other consumption,"Hotell, kaféer och restauranger","Hotels, cafés and restaurants"
+category,Kläder och skor - kläder,Clothing and shoes - Clothing,Kläder och skor,Clothing and shoes,kläder,Clothing
+category,"Mat och dryck - grönsaker, rotfrukter, baljväxter","Food and drink - Vegetables, root crops and legumes",Mat och dryck,Food and drink,"grönsaker, rotfrukter, baljväxter","Vegetables, root crops and legumes"
+category,Lokala transporter - bränslen och smörjmedel,Local transport - Fuels and lubricants,Lokala transporter,Local transport,bränslen och smörjmedel,Fuels and lubricants
+category,Mat och dryck - frukter och nötter,Food and drink - Fruit and nuts,Mat och dryck,Food and drink,frukter och nötter,Fruit and nuts
+category,"Fritid, sport, kultur - paketresor","Leisure, sport and culture - Package holidays","Fritid, sport, kultur","Leisure, sport and culture",paketresor,Package holidays
+category,"Bostaden - faktisk hyra, hyresrätt (permanentbostad)",Housing - Actual rent for rented permanent dwelling,Bostaden,Housing,"faktisk hyra, hyresrätt (permanentbostad)",Actual rent for rented permanent dwelling
+category,Lokala transporter - bilar,Local transport - Cars,Lokala transporter,Local transport,bilar,Cars
+category,Mat och dryck - bröd och spannmålsprodukter,Food and drink - Bread and cereal products,Mat och dryck,Food and drink,bröd och spannmålsprodukter,Bread and cereal products
+category,"Mat och dryck - socker, konfektyr och efterrätter","Food and drink - Sugar, confectionery and desserts",Mat och dryck,Food and drink,"socker, konfektyr och efterrätter","Sugar, confectionery and desserts"
+category,"Övrigt - furniture, furnishings, carpets","Other consumption - Furniture, furnishings and carpets",Övrigt,Other consumption,"furniture, furnishings, carpets","Furniture, furnishings and carpets"
+category,Övrigt - informations- och kommunikationsutrustning,Other consumption - Information and communication equipment,Övrigt,Other consumption,informations- och kommunikationsutrustning,Information and communication equipment
+category,Övrigt - medicines,Other consumption - Medicines,Övrigt,Other consumption,medicines,Medicines
+category,Mat och dryck - färdigmat och andra livsmedelsprodukter,Food and drink - Ready-made meals and other food products,Mat och dryck,Food and drink,färdigmat och andra livsmedelsprodukter,Ready-made meals and other food products
+category,Lokala transporter - passagerartransport till sjöss,Local transport - Passenger transport by sea,Lokala transporter,Local transport,passagerartransport till sjöss,Passenger transport by sea
+category,Övrigt - other appliances and products for personal care,Other consumption - Other appliances and products for personal care,Övrigt,Other consumption,other appliances and products for personal care,Other appliances and products for personal care
+category,Bostaden - elektricitet,Housing - Electricity,Bostaden,Housing,elektricitet,Electricity
+category,Bostaden - direkta utsläpp från uppvärmning,Housing - Direct emissions from heating,Bostaden,Housing,direkta utsläpp från uppvärmning,Direct emissions from heating
+category,"Fritid, sport, kultur - trädgårdsprodukter, växter och blommor","Leisure, sport and culture - Garden products, plants and flowers","Fritid, sport, kultur","Leisure, sport and culture","trädgårdsprodukter, växter och blommor","Garden products, plants and flowers"
+category,Mat och dryck - fisk och skaldjur,Food and drink - Fish and seafood,Mat och dryck,Food and drink,fisk och skaldjur,Fish and seafood
+category,Kläder och skor - skor och andra skodon,Clothing and shoes - Shoes and other footwear,Kläder och skor,Clothing and shoes,skor och andra skodon,Shoes and other footwear
+category,Övrigt - informations- och kommunikationstjänster,Other consumption - Information and communication services,Övrigt,Other consumption,informations- och kommunikationstjänster,Information and communication services
+category,Övrigt - household appliances,Other consumption - Household appliances,Övrigt,Other consumption,household appliances,Household appliances
+category,Övrigt - goods and services for household maintenance,Other consumption - Goods and services for household maintenance,Övrigt,Other consumption,goods and services for household maintenance,Goods and services for household maintenance
+category,Mat och dryck - vin,Food and drink - Wine,Mat och dryck,Food and drink,vin,Wine
+category,Lokala transporter - kollektivtrafik och andra kombinationsresor,Local transport - Public transport and other combined trips,Lokala transporter,Local transport,kollektivtrafik och andra kombinationsresor,Public transport and other combined trips
+category,"Fritid, sport, kultur - rekreations- och sporttjänster","Leisure, sport and culture - Recreation and sport services","Fritid, sport, kultur","Leisure, sport and culture",rekreations- och sporttjänster,Recreation and sport services
+category,"Fritid, sport, kultur - spel, leksaker och hobbyartiklar","Leisure, sport and culture - Games, toys and hobby articles","Fritid, sport, kultur","Leisure, sport and culture","spel, leksaker och hobbyartiklar","Games, toys and hobby articles"
+category,Mat och dryck - oljor och fetter,Food and drink - Oils and fats,Mat och dryck,Food and drink,oljor och fetter,Oils and fats
+category,Lokala transporter - underhåll och reparationer,Local transport - Maintenance and repairs,Lokala transporter,Local transport,underhåll och reparationer,Maintenance and repairs
+category,Mat och dryck - frukt- och grönsaksjuicer,Food and drink - Fruit and vegetable juices,Mat och dryck,Food and drink,frukt- och grönsaksjuicer,Fruit and vegetable juices
+category,"Fritid, sport, kultur - sällskapsdjur och produkter för sällskapsdjur","Leisure, sport and culture - Pets and pet products","Fritid, sport, kultur","Leisure, sport and culture",sällskapsdjur och produkter för sällskapsdjur,Pets and pet products
+category,Övrigt - accommodation services,Other consumption - Accommodation services,Övrigt,Other consumption,accommodation services,Accommodation services
+category,Mat och dryck - tobak,Food and drink - Tobacco,Mat och dryck,Food and drink,tobak,Tobacco
+category,"Fritid, sport, kultur - större varaktiga fritidsprodukter","Leisure, sport and culture - Major durable goods for leisure","Fritid, sport, kultur","Leisure, sport and culture",större varaktiga fritidsprodukter,Major durable goods for leisure
+category,"Fritid, sport, kultur - hasardspel: tips och lotter","Leisure, sport and culture - Games of chance, betting and lotteries","Fritid, sport, kultur","Leisure, sport and culture",hasardspel: tips och lotter,"Games of chance, betting and lotteries"
+category,"Övrigt - glassware, tableware, other utensils","Other consumption - Glassware, tableware and other utensils",Övrigt,Other consumption,"glassware, tableware, other utensils","Glassware, tableware and other utensils"
+category,"Bostaden - underhåll, reparation, säkerhet","Housing - Maintenance, repair and security",Bostaden,Housing,"underhåll, reparation, säkerhet","Maintenance, repair and security"
+category,Mat och dryck - läskedrycker,Food and drink - Soft drinks,Mat och dryck,Food and drink,läskedrycker,Soft drinks
+category,Övrigt - hairdressing salons and personal grooming establishments,Other consumption - Hairdressing salons and personal grooming establishments,Övrigt,Other consumption,hairdressing salons and personal grooming establishments,Hairdressing salons and personal grooming establishments
+category,"Bostaden - uppskattad hyra för fritidshus o andra boenden, garage, förråd","Housing - Imputed rent for holiday homes, other dwellings, garages and storage",Bostaden,Housing,"uppskattad hyra för fritidshus o andra boenden, garage, förråd","Imputed rent for holiday homes, other dwellings, garages and storage"
+category,"Fritid, sport, kultur - utrustning för sport, camping och friluftsliv","Leisure, sport and culture - Equipment for sport, camping and outdoor recreation","Fritid, sport, kultur","Leisure, sport and culture","utrustning för sport, camping och friluftsliv","Equipment for sport, camping and outdoor recreation"
+category,Övrigt - household textiles,Other consumption - Household textiles,Övrigt,Other consumption,household textiles,Household textiles
+category,Lokala transporter - reservdelar och tillbehör,Local transport - Spare parts and accessories,Lokala transporter,Local transport,reservdelar och tillbehör,Spare parts and accessories
+category,"Lokala transporter - vägtransporter: bilpooler, buss, taxi","Local transport - Road transport services: car pools, buses and taxis",Lokala transporter,Local transport,"vägtransporter: bilpooler, buss, taxi","Road transport services: car pools, buses and taxis"
+category,Övrigt - home and garden tools,Other consumption - Home and garden tools,Övrigt,Other consumption,home and garden tools,Home and garden tools
+category,Övrigt - financial services,Other consumption - Financial services,Övrigt,Other consumption,financial services,Financial services
+category,Lokala transporter - bilförmån,Local transport - Company-car benefit,Lokala transporter,Local transport,bilförmån,Company-car benefit
+category,Mat och dryck - kaffe och kaffesurrogat,Food and drink - Coffee and coffee substitutes,Mat och dryck,Food and drink,kaffe och kaffesurrogat,Coffee and coffee substitutes
+category,Kläder och skor - andra klädesplagg och klädestillbehörs,Clothing and shoes - Other garments and clothing accessories,Kläder och skor,Clothing and shoes,andra klädesplagg och klädestillbehörs,Other garments and clothing accessories
+category,Lokala transporter - uthyrning av personliga transportmedel,Local transport - Rental of personal transport equipment,Lokala transporter,Local transport,uthyrning av personliga transportmedel,Rental of personal transport equipment
+category,Mat och dryck - starköl,Food and drink - Strong beer,Mat och dryck,Food and drink,starköl,Strong beer
+category,Övrigt - other personal effects n.e.c.,Other consumption - Other personal effects n.e.c.,Övrigt,Other consumption,other personal effects n.e.c.,Other personal effects n.e.c.
+category,Mat och dryck - spritdrycker,Food and drink - Spirits,Mat och dryck,Food and drink,spritdrycker,Spirits
+category,Övrigt - jewellery and watches,Other consumption - Jewellery and watches,Övrigt,Other consumption,jewellery and watches,Jewellery and watches
+category,Lokala transporter - persontransport järn- och spårväg,Local transport - Passenger transport by rail and tram,Lokala transporter,Local transport,persontransport järn- och spårväg,Passenger transport by rail and tram
+category,Lokala transporter - cyklar,Local transport - Bicycles,Lokala transporter,Local transport,cyklar,Bicycles
+category,Övrigt - outpatient dental services,Other consumption - Outpatient dental services,Övrigt,Other consumption,outpatient dental services,Outpatient dental services
+category,Övrigt - other services,Other consumption - Other services,Övrigt,Other consumption,other services,Other services
+category,Övrigt - medical aids and maintenance,Other consumption - Medical aids and maintenance,Övrigt,Other consumption,medical aids and maintenance,Medical aids and maintenance
+category,"Fritid, sport, kultur - kulturella tjänster","Leisure, sport and culture - Cultural services","Fritid, sport, kultur","Leisure, sport and culture",kulturella tjänster,Cultural services
+category,Övrigt - home care for elderly and disabled,Other consumption - Home care for older people and people with disabilities,Övrigt,Other consumption,home care for elderly and disabled,Home care for older people and people with disabilities
+category,Bostaden - directa utsläpp från hushåll,Housing - Direct household emissions,Bostaden,Housing,directa utsläpp från hushåll,Direct household emissions
+category,Övrigt - other outpatient care services,Other consumption - Other outpatient care services,Övrigt,Other consumption,other outpatient care services,Other outpatient care services
+category,"Fritid, sport, kultur - tidningar och tidskrifter","Leisure, sport and culture - Newspapers and periodicals","Fritid, sport, kultur","Leisure, sport and culture",tidningar och tidskrifter,Newspapers and periodicals
+category,"Fritid, sport, kultur - böcker","Leisure, sport and culture - Books","Fritid, sport, kultur","Leisure, sport and culture",böcker,Books
+category,Mat och dryck - öl klass I o II,Food and drink - Low- and medium-strength beer,Mat och dryck,Food and drink,öl klass I o II,Low- and medium-strength beer
+category,Lokala transporter - parkeringstjänster,Local transport - Parking services,Lokala transporter,Local transport,parkeringstjänster,Parking services
+category,Mat och dryck - vatten,Food and drink - Water,Mat och dryck,Food and drink,vatten,Water
+category,"Fritid, sport, kultur - skriv- och ritmaterial","Leisure, sport and culture - Writing and drawing materials","Fritid, sport, kultur","Leisure, sport and culture",skriv- och ritmaterial,Writing and drawing materials
+category,Övrigt - residential care for elderly and disabled (no health care),"Other consumption - Residential care for older people and people with disabilities, excluding health care",Övrigt,Other consumption,residential care for elderly and disabled (no health care),"Residential care for older people and people with disabilities, excluding health care"
+category,Lokala transporter - motorcyklar,Local transport - Motorcycles,Lokala transporter,Local transport,motorcyklar,Motorcycles
+category,Övrigt - insurance,Other consumption - Insurance,Övrigt,Other consumption,insurance,Insurance
+category,Kläder och skor - material till kläder,Clothing and shoes - Clothing materials,Kläder och skor,Clothing and shoes,material till kläder,Clothing materials
+category,"Fritid, sport, kultur - fritidsvaror: uthyrning, underhåll och reparation","Leisure, sport and culture - Leisure goods: rental, maintenance and repair","Fritid, sport, kultur","Leisure, sport and culture","fritidsvaror: uthyrning, underhåll och reparation","Leisure goods: rental, maintenance and repair"
+category,Övrigt - medical products,Other consumption - Medical products,Övrigt,Other consumption,medical products,Medical products
+category,Mat och dryck - narkotika,Food and drink - Narcotics,Mat och dryck,Food and drink,narkotika,Narcotics
+category,Övrigt - electric appliances for personal care,Other consumption - Electric appliances for personal care,Övrigt,Other consumption,electric appliances for personal care,Electric appliances for personal care
+category,Lokala transporter - annan transport av varor,Local transport - Other transport of goods,Lokala transporter,Local transport,annan transport av varor,Other transport of goods
+category,"Fritid, sport, kultur - tjänster för sällskapsdjur","Leisure, sport and culture - Services for pets","Fritid, sport, kultur","Leisure, sport and culture",tjänster för sällskapsdjur,Services for pets
+category,"Mat och dryck - te, maté och andra teer på växter","Food and drink - Tea, maté and other herbal teas",Mat och dryck,Food and drink,"te, maté och andra teer på växter","Tea, maté and other herbal teas"
+category,"Fritid, sport, kultur - fotografisk och optisk utrustning","Leisure, sport and culture - Photographic and optical equipment","Fritid, sport, kultur","Leisure, sport and culture",fotografisk och optisk utrustning,Photographic and optical equipment
+category,Övrigt - Utbildningstjänster,Other consumption - Education services,Övrigt,Other consumption,Utbildningstjänster,Education services
+category,"Bostaden - faktiska hyror för andra boenden, garage, förråd","Housing - Actual rents for other dwellings, garages and storage",Bostaden,Housing,"faktiska hyror för andra boenden, garage, förråd","Actual rents for other dwellings, garages and storage"
+category,"Fritid, sport, kultur - audiovisuella medier","Leisure, sport and culture - Audiovisual media","Fritid, sport, kultur","Leisure, sport and culture",audiovisuella medier,Audiovisual media
+category,Övrigt - programvaror,Other consumption - Software,Övrigt,Other consumption,programvaror,Software
+category,Lokala transporter - post- och budtjänster,Local transport - Postal and courier services,Lokala transporter,Local transport,post- och budtjänster,Postal and courier services
+category,Mat och dryck - andra alkoholhaltiga drycker,Food and drink - Other alcoholic beverages,Mat och dryck,Food and drink,andra alkoholhaltiga drycker,Other alcoholic beverages
+category,"Lokala transporter - körlektioner, körkort, bilprovning","Local transport - Driving lessons, driving licences and vehicle inspections",Lokala transporter,Local transport,"körlektioner, körkort, bilprovning","Driving lessons, driving licences and vehicle inspections"
+category,"Fritid, sport, kultur - musikinstrument","Leisure, sport and culture - Musical instruments","Fritid, sport, kultur","Leisure, sport and culture",musikinstrument,Musical instruments
+category,Mat och dryck - chokladdrycker,Food and drink - Chocolate drinks,Mat och dryck,Food and drink,chokladdrycker,Chocolate drinks
+category,Lokala transporter - biltullar,Local transport - Road tolls,Lokala transporter,Local transport,biltullar,Road tolls
+category,Övrigt - inpatient curative and rehabilitative services,Other consumption - Inpatient curative and rehabilitative services,Övrigt,Other consumption,inpatient curative and rehabilitative services,Inpatient curative and rehabilitative services
+category,Övrigt - childcare services,Other consumption - Childcare services,Övrigt,Other consumption,childcare services,Childcare services
+category,Lokala transporter - andra persontransporttjänster,Local transport - Other passenger transport services,Lokala transporter,Local transport,andra persontransporttjänster,Other passenger transport services
+category,Övrigt - preventive care services,Other consumption - Preventive care services,Övrigt,Other consumption,preventive care services,Preventive care services
+category,"Fritid, sport, kultur - diverse trycksaker","Leisure, sport and culture - Miscellaneous printed matter","Fritid, sport, kultur","Leisure, sport and culture",diverse trycksaker,Miscellaneous printed matter
+category,Övrigt - religious and ritual articles,Other consumption - Religious and ritual articles,Övrigt,Other consumption,religious and ritual articles,Religious and ritual articles
+category,Bostaden - flytande bränslen,Housing - Liquid fuels,Bostaden,Housing,flytande bränslen,Liquid fuels
+category,Bostaden - fasta bränslen,Housing - Solid fuels,Bostaden,Housing,fasta bränslen,Solid fuels
+category,Övrigt - laboratory services and imaging,Other consumption - Laboratory services and imaging,Övrigt,Other consumption,laboratory services and imaging,Laboratory services and imaging
+category,"Kläder och skor - tvätt, lagning och uthyrning av kläder","Clothing and shoes - Laundry, repair and rental of clothing",Kläder och skor,Clothing and shoes,"tvätt, lagning och uthyrning av kläder","Laundry, repair and rental of clothing"
+category,"Kläder och skor - rengöring, lagning och uthyrning av skodon","Clothing and shoes - Cleaning, repair and rental of footwear",Kläder och skor,Clothing and shoes,"rengöring, lagning och uthyrning av skodon","Cleaning, repair and rental of footwear"
+category,Carbon capture,Carbon capture,Carbon capture,Carbon capture placeholder,Carbon capture,Carbon capture
+category,Bostaden - gas,Housing - Gas,Bostaden,Housing,gas,Gas
+assumption_note,"10% färre bilar 2050 men varje bil ger samma avtryck som idag eftersom elbils produktion kräver mer, men effektiviseras lite","10% fewer cars by 2050, but each car has the same footprint as today because electric-vehicle production requires more resources, although it becomes slightly more efficient.",,,,
+assumption_note,Massiv reduktion av bensin/diesel men inte smörjmedel,"Large reduction in petrol and diesel, but not in lubricants.",,,,
+assumption_note,90% elbilar 2050,90% electric cars by 2050.,,,,
+assumption_note,95% av hushållen täcks av CCS kring 2030,95% of households are covered by CCS around 2030.,,,,
+assumption_note,50 % av hushåll som eldar olja och pellets övergår till klimatsmart uppvärmning,50% of households using oil and pellets shift to climate-smart heating.,,,,
+assumption_note,75% av medborgarna halverar sin köttkonsumtion till 2050,75% of residents halve their meat consumption by 2050.,,,,
+assumption_note,75% av medborgarna halverar sin mejerikonsumtion till 2050,75% of residents halve their dairy consumption by 2050.,,,,
+assumption_note,Organisationer som erbjuder bilförmån minskas för att minska bilägande,Organisations offering company-car benefits are reduced to decrease car ownership.,,,,
+assumption_note,"De flesta -90%- flyger mindre, och flyg blir mindre CO2 tunga (alt. drivmedel)","Most residents, 90%, fly less, and aviation becomes less CO2-intensive through alternative fuels.",,,,
+assumption_note,Vi minskar med 50% och flygen blir effektivare,Flying is reduced by 50% and aviation becomes more efficient.,,,,
+assumption_note,CCS,CCS.,,,,
+assumption_note,Elektrifiering av 100% av flottan till 2050,100% electrification of the fleet by 2050.,,,,
+assumption_note,75% av folket minskar sin köttkonsumtion m 50%,75% of residents reduce their meat consumption by 50%.,,,,
+assumption_note,50% av folket minskar boyta m 25%,50% of residents reduce living space by 25%.,,,,
+assumption_note,50% av folket minskar sin mejerikonsumtion m 25%,50% of residents reduce dairy consumption by 25%.,,,,
+assumption_note,Vi minskar nyinköp med 50% och produktionen blir effektivare,New purchases are reduced by 50% and production becomes more efficient.,,,,
+assumption_note,Elektrifiering av 100% gör att bara smörjmedel finns kvar,100% electrification means that only lubricants remain.,,,,
+assumption_note,Folk minskar paketresor med 50% och systemet blir effektivare,People reduce package holidays by 50% and the system becomes more efficient.,,,,
+assumption_note,50% av folket äger inte egen bil,50% of residents do not own a private car.,,,,
+assumption_note,100% av folket minskar med 50%,100% of residents reduce consumption by 50%.,,,,
+assumption_note,75% av folket minskar med 50%,75% of residents reduce consumption by 50%.,,,,
+assumption_note,"Sjötransport blir effektivare, och drivs mer med alt bränsle",Sea transport becomes more efficient and is increasingly powered by alternative fuels.,,,,
+assumption_note,Vi minskar med 50% och produktionen blir effektivare,Consumption is reduced by 50% and production becomes more efficient.,,,,
+assumption_note,50% uppgraderar uppvärmning m 80%,50% upgrade heating systems with an 80% reduction effect.,,,,
+assumption_note,"alla flyger mycket mindre, och flyg blir mindre CO2 tunga (alt. drivmedel)","All residents fly much less, and aviation becomes less CO2-intensive through alternative fuels.",,,,
+assumption_note,100% elbilar 2050,100% electric cars by 2050.,,,,
+assumption_note,"90% av medborgarna minskar sin köttkonsumtion med 80% till 2050, matsvinn minskas, produktion blir mer effektivt",90% of residents reduce meat consumption by 80% by 2050; food waste is reduced and production becomes more efficient.,,,,
+assumption_note,"75% av befolkningen bor 25% mindre men en långsam förändring, pga bygg livslängd","75% of the population lives in 25% less space, but the change is slow because of building lifetimes.",,,,
+assumption_note,"75% av medborgarna minskar sin mejeri konsumtion m. 75% till 2050, matsvinn minskas, produktion blir mer effektivt",75% of residents reduce dairy consumption by 75% by 2050; food waste is reduced and production becomes more efficient.,,,,
+assumption_note,70% via transition till förnybar energi,70% reduction through transition to renewable energy.,,,,
+assumption_note,"100% elbilar,  smörjmedel kvarstår",100% electric cars; lubricants remain.,,,,
+assumption_note,"75% av befolkningen bor lite mindre men en långsam förändring, pga bygg livslängd","75% of the population lives in slightly less space, but the change is slow because of building lifetimes.",,,,
+assumption_note,Paketresor räknas som flyg,Package holidays are treated as flights.,,,,
+assumption_note,50 % färre bilar 2050 men varje bil ger samma avtryck som idag,"50% fewer cars by 2050, but each car has the same footprint as today.",,,,
+assumption_note,Sötsaker och fika halveras för hälsa och klimatavtryck,Sweets and fika consumption are halved for health and climate-footprint reasons.,,,,
+assumption_note,Färdigmaten innehåller mindre kött och mejeri,Ready-made meals contain less meat and dairy.,,,,
+assumption_note,mer förnybar energi och energieffektivisering av varor ger en minskning trots ökad elekrifiering,More renewable energy and energy efficiency in goods reduce emissions despite increased electrification.,,,,
+assumption_note,100 % av hushåll som eldar olja och pellets övergår till klimatsmart uppvärmning,100% of households using oil and pellets shift to climate-smart heating.,,,,
+assumption_note,Vi minskar nyinköp med 75% och produktionen blir effektivare,New purchases are reduced by 75% and production becomes more efficient.,,,,
+assumption_note,Vi minskar tobakkonsumtion m 75%,Tobacco consumption is reduced by 75%.,,,,

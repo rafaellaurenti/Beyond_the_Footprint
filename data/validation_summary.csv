@@ -1,0 +1,5 @@
+scenario_id,scenario_name,workbook_result_sheet,years_compared,max_abs_difference_tco2e_per_capita,mean_abs_difference_tco2e_per_capita
+S1,Scenario 1,S1_res,25,7.993605777301127e-15,7.993605777301127e-15
+S2,Scenario 2,S2_res,25,9.769962616701378e-15,5.293543381412746e-15
+S3,Scenario 3,S3_res,25,4.440892098500626e-15,1.5276668818842154e-15
+S4,Scenario 4,S4mål_res,25,6.661338147750939e-16,1.7763568394002506e-16

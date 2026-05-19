@@ -1,0 +1,7 @@
+# Python dependencies for the Malmö urban consumption gap reproducibility package
+# Tested with Python 3.10+
+
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+jupyter>=1.0       # for the interactive notebook
