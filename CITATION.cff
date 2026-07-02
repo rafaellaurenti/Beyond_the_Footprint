@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "Beyond the Footprint: sufficiency, coordination and the limits of hotspot strategies in city climate governance - Reproducibility package"
+title: "Beyond the Footprint: the urban consumption gap, sufficiency and the limits of hotspot strategies in city climate governance - Reproducibility package"
 message: "If you use this software or data, please cite the article."
 type: software
 authors:
@@ -8,7 +8,7 @@ repository-code: "https://github.com/[to-be-completed]/malmo-consumption-gap"
 license: MIT
 preferred-citation:
   type: article
-  title: "Beyond the Footprint: sufficiency, coordination and the limits of hotspot strategies in city climate governance"
+  title: "Beyond the Footprint: the urban consumption gap, sufficiency and the limits of hotspot strategies in city climate governance"
   authors:
     - name: "[To be completed]"
   journal: "Sustainable Production and Consumption"

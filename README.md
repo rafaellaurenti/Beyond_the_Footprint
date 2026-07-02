@@ -1,4 +1,4 @@
-# Beyond the Footprint: sufficiency, coordination and the limits of hotspot strategies in city climate governance
+# Beyond the Footprint: the urban consumption gap, sufficiency and the limits of hotspot strategies in city climate governance
 
 **Reproducibility package for the article submitted to *Sustainable Production and Consumption*.**
 
@@ -6,7 +6,7 @@ This repository provides the data, code and figures needed to reproduce the scen
 
 ## Citation
 
-> [Authors], 2026. Beyond the Footprint: sufficiency, coordination and the limits of hotspot strategies in city climate governance. *Sustainable Production and Consumption* [submitted].
+> [Authors], 2026. Beyond the Footprint: the urban consumption gap, sufficiency and the limits of hotspot strategies in city climate governance. *Sustainable Production and Consumption* [submitted].
 
 ## Repository structure
 
