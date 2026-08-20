@@ -2996,10 +2996,10 @@ S2,Scenario 2,2027,clothing_and_shoes_laundry_repair_and_rental_of_clothing,"Clo
 S2,Scenario 2,2027,clothing_and_shoes_cleaning_repair_and_rental_of_footwear,"Clothing and shoes - Cleaning, repair and rental of footwear",Clothing and shoes,0.057527,0.0,0.0,0.057527,0.0
 S2,Scenario 2,2027,carbon_capture,Carbon capture,Carbon capture placeholder,0.0,0.0,0.0,0.0,0.0
 S2,Scenario 2,2027,housing_gas,Housing - Gas,Housing,0.002579,0.0,0.0,0.002579,0.0
-S2,Scenario 2,2028,flights_passenger_flights,Flights - Passenger flights,Flights,849.8395,0.09818713907605163,0.6,799.7735144927068,50.06598550729325
+S2,Scenario 2,2028,flights_passenger_flights,Flights - Passenger flights,Flights,849.8395,0.09818713907605164,0.6,799.7735144927067,50.06598550729336
 S2,Scenario 2,2028,housing_district_heating_and_other_energy_for_heating_and_cooling,Housing - District heating and other energy for heating and cooling,Housing,506.3924,0.11324277592101167,1.0,449.04711891869664,57.34528108130337
-S2,Scenario 2,2028,local_transport_direct_emissions_from_vehicle_use,Local transport - Direct emissions from vehicle use,Local transport,410.0331,0.09818713907605163,1.0,369.7731229845154,40.259977015484594
-S2,Scenario 2,2028,food_and_drink_meat,Food and drink - Meat,Food and drink,289.9323,0.0818226158967097,0.5,278.0707903905252,11.861509609474808
+S2,Scenario 2,2028,local_transport_direct_emissions_from_vehicle_use,Local transport - Direct emissions from vehicle use,Local transport,410.0331,0.09818713907605164,1.0,369.7731229845154,40.259977015484594
+S2,Scenario 2,2028,food_and_drink_meat,Food and drink - Meat,Food and drink,289.9323,0.08182261589670971,0.5,278.0707903905252,11.861509609474808
 S2,Scenario 2,2028,housing_imputed_rent_for_owned_permanent_dwelling,Housing - Imputed rent for owned permanent dwelling,Housing,240.1408,0.0,0.0,240.1408,0.0
 S2,Scenario 2,2028,food_and_drink_milk_cheese_other_dairy_products_and_eggs,"Food and drink - Milk, cheese, other dairy products and eggs",Food and drink,229.2876,0.042993131924151544,0.5,224.35870398231395,4.928896017686043
 S2,Scenario 2,2028,other_consumption_hotels_cafes_and_restaurants,"Other consumption - Hotels, cafés and restaurants",Other consumption,200.3526,0.0,0.0,200.3526,0.0
@@ -3019,7 +3019,7 @@ S2,Scenario 2,2028,food_and_drink_ready_made_meals_and_other_food_products,Food 
 S2,Scenario 2,2028,local_transport_passenger_transport_by_sea,Local transport - Passenger transport by sea,Local transport,75.27207,0.0,0.0,75.27207,0.0
 S2,Scenario 2,2028,other_consumption_other_appliances_and_products_for_personal_care,Other consumption - Other appliances and products for personal care,Other consumption,72.39924,0.0,0.0,72.39924,0.0
 S2,Scenario 2,2028,housing_electricity,Housing - Electricity,Housing,57.17375,0.0,0.0,57.17375,0.0
-S2,Scenario 2,2028,housing_direct_emissions_from_heating,Housing - Direct emissions from heating,Housing,50.47222,0.05454841059780646,0.8,48.26967649572575,2.202543504274253
+S2,Scenario 2,2028,housing_direct_emissions_from_heating,Housing - Direct emissions from heating,Housing,50.47222,0.05454841059780647,0.8,48.26967649572575,2.202543504274253
 S2,Scenario 2,2028,leisure_sport_and_culture_garden_products_plants_and_flowers,"Leisure, sport and culture - Garden products, plants and flowers","Leisure, sport and culture",55.99662,0.0,0.0,55.99662,0.0
 S2,Scenario 2,2028,food_and_drink_fish_and_seafood,Food and drink - Fish and seafood,Food and drink,56.70087,0.0,0.0,56.70087,0.0
 S2,Scenario 2,2028,clothing_and_shoes_shoes_and_other_footwear,Clothing and shoes - Shoes and other footwear,Clothing and shoes,50.41063,0.0,0.0,50.41063,0.0
@@ -3049,7 +3049,7 @@ S2,Scenario 2,2028,local_transport_spare_parts_and_accessories,Local transport -
 S2,Scenario 2,2028,local_transport_road_transport_services_car_pools_buses_and_taxis,"Local transport - Road transport services: car pools, buses and taxis",Local transport,24.06002,0.0,0.0,24.06002,0.0
 S2,Scenario 2,2028,other_consumption_home_and_garden_tools,Other consumption - Home and garden tools,Other consumption,20.05375,0.0,0.0,20.05375,0.0
 S2,Scenario 2,2028,other_consumption_financial_services,Other consumption - Financial services,Other consumption,19.67818,0.0,0.0,19.67818,0.0
-S2,Scenario 2,2028,local_transport_company_car_benefit,Local transport - Company-car benefit,Local transport,18.5096,0.0818226158967097,1.0,16.99509610879826,1.5145038912017377
+S2,Scenario 2,2028,local_transport_company_car_benefit,Local transport - Company-car benefit,Local transport,18.5096,0.08182261589670971,1.0,16.99509610879826,1.5145038912017377
 S2,Scenario 2,2028,food_and_drink_coffee_and_coffee_substitutes,Food and drink - Coffee and coffee substitutes,Food and drink,19.9522,0.0,0.0,19.9522,0.0
 S2,Scenario 2,2028,clothing_and_shoes_other_garments_and_clothing_accessories,Clothing and shoes - Other garments and clothing accessories,Clothing and shoes,16.67224,0.0,0.0,16.67224,0.0
 S2,Scenario 2,2028,local_transport_rental_of_personal_transport_equipment,Local transport - Rental of personal transport equipment,Local transport,14.95851,0.0,0.0,14.95851,0.0

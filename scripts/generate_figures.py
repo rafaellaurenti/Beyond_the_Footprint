@@ -15,6 +15,9 @@ Figures:
   4. Domain contributions to reductions in Scenario 4
   5. Sensitivity tornado for the coordinated transition pathway
   S1. Scenario coverage vs residual emissions (supplementary)
+  S2. Baseline emissions as activity x intensity (supplementary; requires
+      data/coicop_activity_intensity_crosswalk.csv, produced by
+      scripts/build_activity_intensity_crosswalk.py)
 """
 
 from pathlib import Path
@@ -96,6 +99,7 @@ cat_res    = pd.read_csv(DATA_DIR / 'category_results.csv')
 summary    = pd.read_csv(DATA_DIR / 'scenario_summary.csv')
 sensitivity= pd.read_csv(DATA_DIR / 'sensitivity_results.csv')
 domain_c   = pd.read_csv(DATA_DIR / 'domain_reduction_contributions_s4.csv')
+activity_crosswalk_path = DATA_DIR / 'coicop_activity_intensity_crosswalk.csv'
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -326,6 +330,218 @@ def supp_coverage():
 
 
 # ═════════════════════════════════════════════════════════════════════════════
+# SUPPLEMENTARY: Baseline emissions as activity x intensity
+# ═════════════════════════════════════════════════════════════════════════════
+def supp_activity_intensity():
+    """Requires data/coicop_activity_intensity_crosswalk.csv (see
+    scripts/build_activity_intensity_crosswalk.py). Skips with a warning if
+    the file is not present, rather than failing the whole run."""
+    if not activity_crosswalk_path.exists():
+        print('  [skipped] supp_activity_intensity_baseline: '
+              f'{activity_crosswalk_path.name} not found in data/. '
+              'Run scripts/build_activity_intensity_crosswalk.py first.')
+        return
+
+    cw = pd.read_csv(activity_crosswalk_path)
+    df = cw[cw['flag'].isin(['OK', 'LOW-CONF', 'SHARED'])].copy()
+    df['sek_per_capita_2021'] = pd.to_numeric(df['sek_per_capita_2021'], errors='coerce')
+    df['implied_intensity_kgco2e_per_sek'] = pd.to_numeric(
+        df['implied_intensity_kgco2e_per_sek'], errors='coerce')
+    df['baseline_kgco2e_cap'] = pd.to_numeric(df['baseline_kgco2e_cap'], errors='coerce')
+    df = df[(df['sek_per_capita_2021'] > 0) & (df['implied_intensity_kgco2e_per_sek'] > 0)]
+
+    fig, ax = plt.subplots(figsize=(8.2, 6.4))
+
+    x_lo, x_hi = 6, 30000
+    y_lo, y_hi = 8e-5, 2
+
+    # Iso-emission reference lines: M x I = E, for a few round E values (kg/cap)
+    x_ref = np.logspace(np.log10(x_lo), np.log10(x_hi), 300)
+    for E in [5, 30, 150, 600]:
+        y_ref = E / x_ref
+        mask = (y_ref >= y_lo) & (y_ref <= y_hi)
+        ax.plot(x_ref[mask], y_ref[mask], color='#bbbbbb', linewidth=0.9,
+                linestyle=(0, (4, 3)), zorder=1, clip_on=True)
+        y_at_right = E / x_hi
+        ax.text(x_hi * 1.12, y_at_right, f'{E} kg/cap', fontsize=6.8, color='#999999',
+                ha='left', va='center')
+
+    for domain in DOMAIN_ORDER:
+        if domain == 'Flights':
+            continue  # flights uses km, not SEK; not comparable on this axis
+        sub = df[df['domain'] == domain]
+        if sub.empty:
+            continue
+        ax.scatter(sub['sek_per_capita_2021'], sub['implied_intensity_kgco2e_per_sek'],
+                   s=np.clip(sub['baseline_kgco2e_cap'] * 2.2, 18, 900),
+                   color=DOMAIN_COLORS[domain], alpha=0.75, edgecolor='white',
+                   linewidth=0.6, zorder=3, label=domain)
+
+    # Callouts for the three categories discussed in Section 3.6 / 4.1
+    callouts = {
+        'Food and drink - Meat': 'Meat',
+        'Clothing and shoes - Clothing': 'Clothing',
+        'Housing - Electricity': 'Electricity',
+    }
+    for cat, label in callouts.items():
+        row = df[df['category'] == cat]
+        if row.empty:
+            continue
+        x, y = row['sek_per_capita_2021'].iloc[0], row['implied_intensity_kgco2e_per_sek'].iloc[0]
+        ax.annotate(label, xy=(x, y), xytext=(10, 10), textcoords='offset points',
+                    fontsize=8.5, fontweight='bold', color='#333333',
+                    arrowprops=dict(arrowstyle='-', color='#333333', lw=0.7))
+
+    ax.set_xscale('log')
+    ax.set_yscale('log')
+    ax.set_xlim(x_lo, x_hi)
+    ax.set_ylim(y_lo, y_hi)
+    ax.set_xlabel('Baseline activity, $M_{0,c}$ (SEK per capita per year, 2021)')
+    ax.set_ylabel('Baseline intensity, $I_{0,c}$ (kg CO\u2082e per SEK)')
+    ax.set_title('Baseline emissions as activity \u00d7 intensity, by category')
+    ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: f'{int(v):,}'))
+    ax.grid(alpha=0.2, which='both')
+
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles, labels, loc='upper right', fontsize=7.8, framealpha=0.92,
+              edgecolor='#cccccc', title='Domain', title_fontsize=8, markerscale=0.7)
+
+    ax.text(0.015, 0.02,
+            'Point size \u221d baseline emissions. Dashed lines are constant-emission contours (M\u00d7I).\n'
+            'Flights excluded: activity measured in km, not SEK (see Section 3.8).',
+            transform=ax.transAxes, fontsize=7, color='#777777', va='bottom', ha='left')
+
+    savefig('supp_activity_intensity_baseline')
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+# SUPPLEMENTARY: Baseline emissions as activity x intensity (interactive)
+# ═════════════════════════════════════════════════════════════════════════════
+def supp_activity_intensity_baseline_interactive():
+    """Interactive HTML companion to supp_activity_intensity_baseline. Same
+    data and layout, but built with Plotly so a reader can hover over any
+    bubble to see the category name, domain, baseline emissions, and the
+    activity/intensity values behind it, rather than only reading position
+    off the axes. Requires plotly (pip install plotly); skips gracefully if
+    it is not installed, so it never blocks the rest of the figure run."""
+    try:
+        import plotly.graph_objects as go
+    except ImportError:
+        print('  [skipped] supp_activity_intensity_baseline_interactive.html: '
+              "plotly not installed. Run 'pip install plotly' and re-run this script.")
+        return
+
+    if not activity_crosswalk_path.exists():
+        print('  [skipped] supp_activity_intensity_baseline_interactive.html: '
+              f'{activity_crosswalk_path.name} not found in data/. '
+              'Run scripts/build_activity_intensity_crosswalk.py first.')
+        return
+
+    cw = pd.read_csv(activity_crosswalk_path)
+    df = cw[cw['flag'].isin(['OK', 'LOW-CONF', 'SHARED'])].copy()
+    df['sek_per_capita_2021'] = pd.to_numeric(df['sek_per_capita_2021'], errors='coerce')
+    df['implied_intensity_kgco2e_per_sek'] = pd.to_numeric(
+        df['implied_intensity_kgco2e_per_sek'], errors='coerce')
+    df['baseline_kgco2e_cap'] = pd.to_numeric(df['baseline_kgco2e_cap'], errors='coerce')
+    df = df[(df['sek_per_capita_2021'] > 0) & (df['implied_intensity_kgco2e_per_sek'] > 0)]
+    df = df[df['domain'] != 'Flights']  # activity measured in km, not SEK; not comparable here
+
+    x_lo, x_hi = 6, 30000
+    y_lo, y_hi = 8e-5, 2
+
+    fig = go.Figure()
+
+    # Iso-emission reference lines: M x I = E, matching the static figure
+    x_ref = np.logspace(np.log10(x_lo), np.log10(x_hi), 200)
+    for E in [5, 30, 150, 600]:
+        y_ref = E / x_ref
+        mask = (y_ref >= y_lo) & (y_ref <= y_hi)
+        fig.add_trace(go.Scatter(
+            x=x_ref[mask], y=y_ref[mask], mode='lines',
+            line=dict(color='#bbbbbb', width=1, dash='dash'),
+            hoverinfo='skip', showlegend=False,
+        ))
+        fig.add_annotation(
+            x=np.log10(x_hi), y=np.log10(E / x_hi), xref='x', yref='y',
+            text=f'{E} kg/cap', showarrow=False, xanchor='left',
+            font=dict(size=10, color='#999999'),
+        )
+
+    max_emissions = df['baseline_kgco2e_cap'].max()
+    sizeref = 2.0 * max_emissions / (42.0 ** 2)
+
+    for domain in DOMAIN_ORDER:
+        if domain == 'Flights':
+            continue
+        sub = df[df['domain'] == domain]
+        if sub.empty:
+            continue
+        hover = [
+            f"<b>{cat}</b><br>"
+            f"Domain: {domain}<br>"
+            f"Baseline emissions: {e:.2f} kg CO\u2082e/cap<br>"
+            f"Activity (M\u2080): {m:,.0f} SEK/cap<br>"
+            f"Intensity (I\u2080): {i:.4f} kg CO\u2082e/SEK<br>"
+            f"COICOP code(s): {coic}<br>"
+            f"Match quality: {flag}"
+            for cat, e, m, i, coic, flag in zip(
+                sub['category'], sub['baseline_kgco2e_cap'], sub['sek_per_capita_2021'],
+                sub['implied_intensity_kgco2e_per_sek'], sub['coicop_codes'], sub['flag'])
+        ]
+        fig.add_trace(go.Scatter(
+            x=sub['sek_per_capita_2021'], y=sub['implied_intensity_kgco2e_per_sek'],
+            mode='markers', name=domain,
+            marker=dict(
+                size=sub['baseline_kgco2e_cap'], sizemode='area', sizeref=sizeref, sizemin=3,
+                color=DOMAIN_COLORS[domain], line=dict(width=0.6, color='white'), opacity=0.78,
+            ),
+            hovertext=hover, hoverinfo='text',
+        ))
+
+    # Callouts for the three categories discussed in Section 3.6 / 4.1
+    callouts = {
+        'Food and drink - Meat': 'Meat',
+        'Clothing and shoes - Clothing': 'Clothing',
+        'Housing - Electricity': 'Electricity',
+    }
+    for cat, label in callouts.items():
+        row = df[df['category'] == cat]
+        if row.empty:
+            continue
+        fig.add_annotation(
+            x=row['sek_per_capita_2021'].iloc[0], y=row['implied_intensity_kgco2e_per_sek'].iloc[0],
+            text=f'<b>{label}</b>', showarrow=True, arrowhead=0, arrowcolor='#333333',
+            ax=28, ay=-24, font=dict(size=12, color='#333333'),
+        )
+
+    fig.update_xaxes(
+        title_text='Baseline activity, M\u2080,c (SEK per capita per year, 2021)',
+        type='log', range=[np.log10(x_lo), np.log10(x_hi)], showgrid=True, gridcolor='#eeeeee',
+    )
+    fig.update_yaxes(
+        title_text='Baseline intensity, I\u2080,c (kg CO\u2082e per SEK)',
+        type='log', range=[np.log10(y_lo), np.log10(y_hi)], showgrid=True, gridcolor='#eeeeee',
+    )
+    fig.update_layout(
+        title='Baseline emissions as activity \u00d7 intensity, by category (hover to explore)',
+        template='plotly_white', width=980, height=700,
+        legend=dict(title='Domain'),
+        hoverlabel=dict(bgcolor='white', font_size=12, font_family='Arial'),
+        margin=dict(t=70, r=140),
+        annotations=list(fig.layout.annotations) + [dict(
+            x=0.01, y=-0.13, xref='paper', yref='paper', showarrow=False,
+            text='Bubble size \u221d baseline emissions. Dashed lines are constant-emission contours '
+                 '(M\u00d7I). Flights excluded: activity measured in km, not SEK (see Section 3.8).',
+            font=dict(size=10, color='#777777'), xanchor='left',
+        )],
+    )
+
+    out_path = FIG_DIR / 'supp_activity_intensity_baseline_interactive.html'
+    fig.write_html(out_path, include_plotlyjs=True, full_html=True)
+    print(f'  {out_path.name}')
+
+
+# ═════════════════════════════════════════════════════════════════════════════
 # MAIN
 # ═════════════════════════════════════════════════════════════════════════════
 if __name__ == '__main__':
@@ -336,4 +552,6 @@ if __name__ == '__main__':
     fig4_domain_reductions()
     fig5_sensitivity()
     supp_coverage()
+    supp_activity_intensity()
+    supp_activity_intensity_baseline_interactive()
     print(f'All figures saved to {FIG_DIR}/')

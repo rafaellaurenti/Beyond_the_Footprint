@@ -19,7 +19,8 @@ FIG_DIR = REPO_ROOT / 'figures'
 NB_DIR = REPO_ROOT / 'notebooks'
 SCRIPT_DIR = REPO_ROOT / 'scripts'
 SOURCE_DIR = REPO_ROOT / 'source'
-for d in [DATA_DIR, FIG_DIR, NB_DIR, SCRIPT_DIR, SOURCE_DIR]:
+SUPP_DIR = REPO_ROOT / 'supplementary'
+for d in [DATA_DIR, FIG_DIR, NB_DIR, SCRIPT_DIR, SOURCE_DIR, SUPP_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
 YEARS = list(range(2026, 2051))
@@ -675,6 +676,37 @@ write_csv(DATA_DIR / 'scenario_summary.csv', scenario_summary)
 write_csv(DATA_DIR / 'sensitivity_results.csv', sensitivity)
 write_csv(DATA_DIR / 'validation_summary.csv', validation)
 write_csv(DATA_DIR / 'domain_reduction_contributions_s4.csv', domain_contribs)
+
+# Table A2: Scenario 4 category-level parameters (supplementary material).
+# It is derived here from `params`, computed above, so it is reproducible end-to-end from the source
+# workbook. If `scripts/build_activity_intensity_crosswalk.py` has been run
+# afterwards, it will overwrite this file with six additional columns; run
+# this script first if you want the base version on its own.
+s4_active = sorted(
+    (p for p in params if p['scenario_id'] == 'S4' and p['combined_reduction_fraction'] > 0),
+    key=lambda p: -p['baseline_kgco2e_per_capita']
+)
+table_a2 = [{
+    'category_id': p['category_id'],
+    'Category': p['category'],
+    'Domain': p['domain'],
+    'Baseline (kg CO₂e/cap)': p['baseline_kgco2e_per_capita'],
+    'Behavioural reduction': p['behavioral_reduction_fraction'],
+    'Technological reduction': p['technical_reduction_fraction'],
+    'Combined reduction': p['combined_reduction_fraction'],
+    'Max adoption (L)': p['L_max_adoption'],
+    'Adoption speed (k)': p['k_adoption_speed'],
+    'Inflection year (t\u2080)': p['t0_inflection_year'],
+    'Assumption note': p['assumption_note'],
+} for p in s4_active]
+write_csv(SUPP_DIR / 'table_a2_scenario4_parameters.csv', table_a2)
+print(f"Table A2: {len(table_a2)} active S4 categories written to supplementary/")
+
+# Table A1: full sensitivity results (supplementary material). Same content as
+# data/sensitivity_results.csv; duplicated here because the manuscript's
+# Table A1 is referenced from supplementary/.
+write_csv(SUPP_DIR / 'table_a1_sensitivity_results.csv', sensitivity)
+print(f"Table A1: {len(sensitivity)} sensitivity variants written to supplementary/")
 
 translation_rows = []
 for b in baseline:
