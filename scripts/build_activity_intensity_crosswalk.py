@@ -2,7 +2,7 @@
 Build the COICOP activity-intensity crosswalk and enrich Table A2.
 
 Run AFTER extract_clean_dataset_from_workbook.py, which must have already
-produced data/baseline_categories.csv and supplementary/table_a2_scenario4_parameters.csv.
+produced data/baseline_categories.csv and archive/v1_supplementary/table_a2_scenario4_parameters.csv.
 
 Inputs
 ------
@@ -13,12 +13,12 @@ Inputs
   and place in source/. The table was frozen after May 2024 when SCB switched
   to COICOP 2018, so 2021 is its final year, not a stale download.
 - data/baseline_categories.csv (produced by extract_clean_dataset_from_workbook.py)
-- supplementary/table_a2_scenario4_parameters.csv (produced by the same script)
+- archive/v1_supplementary/table_a2_scenario4_parameters.csv (produced by the same script)
 
 Outputs
 -------
 - data/coicop_activity_intensity_crosswalk.csv (all 109 active categories)
-- supplementary/table_a2_scenario4_parameters.csv (overwritten, six columns added)
+- archive/v1_supplementary/table_a2_scenario4_parameters.csv (overwritten, six columns added)
 
 Every category-to-COICOP match and every "SHARED"/"LOW-CONF"/"DIRECT"/
 "PHYSICAL"/"NOMATCH" judgement call below was made by hand against the COICOP
@@ -26,6 +26,9 @@ classification and against Table 1 and Tables S1-S5 of Dawkins et al. (2024)
 and its supplementary material. See manuscript Section 3.8 for the narrative
 account and the two documented limitations (national-expenditure proxy,
 2021-vs-2022 vintage gap) that this file does not resolve, only makes visible.
+
+Submitted version. Revision 1 change: supplementary tables of the submitted
+version are written to archive/v1_supplementary/ instead of supplementary/.
 """
 from pathlib import Path
 import csv
@@ -34,7 +37,7 @@ import openpyxl
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = REPO_ROOT / 'source'
 DATA_DIR = REPO_ROOT / 'data'
-SUPP_DIR = REPO_ROOT / 'supplementary'
+SUPP_DIR = REPO_ROOT / 'archive' / 'v1_supplementary'
 
 SCB_WORKBOOK = SOURCE_DIR / 'Household_consumption_expenditure_ESA2010_current_prices_SEK_million_by_purpose_COICOP_and_year.xlsx'
 POP_2021 = 10_452_326  # Statistics Sweden, population 31 Dec 2021
@@ -100,11 +103,11 @@ add("Food and drink - Soft drinks", ["0122"], flag="SHARED", note="0122 combined
 add("Food and drink - Fruit and vegetable juices", ["0122"], flag="SHARED", note="0122 combined with Water & Soft drinks",
     peers=["Food and drink - Water", "Food and drink - Soft drinks"])
 add("Food and drink - Coffee and coffee substitutes", ["0121"], flag="SHARED", note="0121 combined with Tea & Chocolate drinks",
-    peers=["Food and drink - Tea, mat\u00e9 and other herbal teas", "Food and drink - Chocolate drinks"])
-add("Food and drink - Tea, mat\u00e9 and other herbal teas", ["0121"], flag="SHARED", note="0121 combined with Coffee & Chocolate drinks",
+    peers=["Food and drink - Tea, maté and other herbal teas", "Food and drink - Chocolate drinks"])
+add("Food and drink - Tea, maté and other herbal teas", ["0121"], flag="SHARED", note="0121 combined with Coffee & Chocolate drinks",
     peers=["Food and drink - Coffee and coffee substitutes", "Food and drink - Chocolate drinks"])
 add("Food and drink - Chocolate drinks", ["0121"], flag="SHARED", note="0121 combined with Coffee & Tea",
-    peers=["Food and drink - Coffee and coffee substitutes", "Food and drink - Tea, mat\u00e9 and other herbal teas"])
+    peers=["Food and drink - Coffee and coffee substitutes", "Food and drink - Tea, maté and other herbal teas"])
 add("Food and drink - Other alcoholic beverages", [], flag="NOMATCH", note="021 fully accounted by spirits+wine+beer; no residual COICOP line")
 
 # Clothing and shoes
@@ -134,7 +137,7 @@ add("Housing - Direct household emissions", [], flag="DIRECT",
     note="Physical direct combustion, not COICOP expenditure. Use fuel volume, not SEK.")
 
 # Other consumption
-add("Other consumption - Hotels, caf\u00e9s and restaurants", ["111"])
+add("Other consumption - Hotels, cafés and restaurants", ["111"])
 add("Other consumption - Accommodation services", ["112"])
 add("Other consumption - Furniture, furnishings and carpets", ["0511", "0512"])
 add("Other consumption - Information and communication equipment", ["0812", "0913"], flag="LOW-CONF",
@@ -322,7 +325,7 @@ def enrich_table_a2(crosswalk_rows):
             row['Baseline activity M0,c'] = FLIGHTS_KM_PER_CAPITA
             row['Baseline intensity I0,c (kgCO2e/unit)'] = cw['implied_intensity_kgco2e_per_sek'] if cw else ''
             row['Activity data source'] = "Larsson et al. (2018); Kamb & Larsson (2019)"
-            row['Confidence flag'] = "PHYSICAL - national literature average, not Malm\u00f6-specific"
+            row['Confidence flag'] = "PHYSICAL - national literature average, not Malmö-specific"
         elif cat in DIRECT_LABELS:
             row['Activity metric'] = DIRECT_LABELS[cat]
             row['Activity unit'] = "physical fuel/vehicle-use volume (not separately quantified)"
@@ -336,7 +339,7 @@ def enrich_table_a2(crosswalk_rows):
             row['Baseline activity M0,c'] = ''
             row['Baseline intensity I0,c (kgCO2e/unit)'] = ''
             row['Activity data source'] = "No COICOP counterpart at 4-digit resolution" if cw else ''
-            base_kg = float(row['Baseline (kg CO\u2082e/cap)'])
+            base_kg = float(row['Baseline (kg CO₂e/cap)'])
             row['Confidence flag'] = f"NOMATCH - {base_kg:.3f} kg/cap; residual limitation" if cw else "MISSING - needs manual review"
         else:
             row['Activity metric'] = cw['coicop_codes']
@@ -374,4 +377,4 @@ if __name__ == '__main__':
     print(Counter(r['flag'] for r in crosswalk))
 
     n = enrich_table_a2(crosswalk)
-    print(f"Table A2 enriched with activity-intensity columns: {n} rows updated in supplementary/")
+    print(f"Table A2 enriched with activity-intensity columns: {n} rows updated in archive/v1_supplementary/")

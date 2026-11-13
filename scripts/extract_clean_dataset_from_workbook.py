@@ -1,3 +1,9 @@
+"""Extract the cleaned dataset from the Scenario Analyzer workbook (submitted version).
+
+Revision 1 change: figures and supplementary tables of the submitted version are
+written to archive/v1_figures/ and archive/v1_supplementary/, so they do not mix
+with the revision 1 outputs in figures/ and supplementary/.
+"""
 from pathlib import Path
 import csv
 import json
@@ -15,11 +21,11 @@ import matplotlib.pyplot as plt
 REPO_ROOT = Path(__file__).resolve().parents[1]
 WORKBOOK_PATH = REPO_ROOT / 'source' / 'Scenario_analyzer_Malmo_february_2026_original.xlsx'
 DATA_DIR = REPO_ROOT / 'data'
-FIG_DIR = REPO_ROOT / 'figures'
+FIG_DIR = REPO_ROOT / 'archive' / 'v1_figures'
 NB_DIR = REPO_ROOT / 'notebooks'
 SCRIPT_DIR = REPO_ROOT / 'scripts'
 SOURCE_DIR = REPO_ROOT / 'source'
-SUPP_DIR = REPO_ROOT / 'supplementary'
+SUPP_DIR = REPO_ROOT / 'archive' / 'v1_supplementary'
 for d in [DATA_DIR, FIG_DIR, NB_DIR, SCRIPT_DIR, SOURCE_DIR, SUPP_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
@@ -696,17 +702,17 @@ table_a2 = [{
     'Combined reduction': p['combined_reduction_fraction'],
     'Max adoption (L)': p['L_max_adoption'],
     'Adoption speed (k)': p['k_adoption_speed'],
-    'Inflection year (t\u2080)': p['t0_inflection_year'],
+    'Inflection year (t₀)': p['t0_inflection_year'],
     'Assumption note': p['assumption_note'],
 } for p in s4_active]
 write_csv(SUPP_DIR / 'table_a2_scenario4_parameters.csv', table_a2)
-print(f"Table A2: {len(table_a2)} active S4 categories written to supplementary/")
+print(f"Table A2: {len(table_a2)} active S4 categories written to archive/v1_supplementary/")
 
 # Table A1: full sensitivity results (supplementary material). Same content as
 # data/sensitivity_results.csv; duplicated here because the manuscript's
 # Table A1 is referenced from supplementary/.
 write_csv(SUPP_DIR / 'table_a1_sensitivity_results.csv', sensitivity)
-print(f"Table A1: {len(sensitivity)} sensitivity variants written to supplementary/")
+print(f"Table A1: {len(sensitivity)} sensitivity variants written to archive/v1_supplementary/")
 
 translation_rows = []
 for b in baseline:

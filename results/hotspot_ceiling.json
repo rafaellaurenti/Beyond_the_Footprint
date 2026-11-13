@@ -1,0 +1,9 @@
+{
+  "hot_share": 0.45044548702926535,
+  "hot_floor_t": 3.151935052,
+  "hot_floor_with_reference_trend_t": 2.160145587839422,
+  "required_coverage": 0.8256453562956427,
+  "n_categories_full_removal": 30,
+  "n_categories_at_s4_depth": 67,
+  "max_reduction_all_at_s4_depth_t": 4.8291691012
+}

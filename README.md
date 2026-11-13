@@ -1,168 +1,156 @@
-# Beyond the Footprint: the urban consumption gap, sufficiency and the limits of hotspot strategies in city climate governance
+# Beyond the footprint: the urban consumption gap and the limits of hotspot strategies in city climate governance
 
-**Reproducibility package for the article.**
+Reproducibility package for the article (manuscript CLRC-D-26-00768, revision 1, November 2026).
 
-This repository provides the data, code and figures needed to reproduce the scenario model, sensitivity analysis and manuscript figures for the Malmö urban consumption gap study.
+The package reproduces every number, table and figure in the revised manuscript and Supplementary Material A. The scripts are deterministic. The random seed of the sensitivity analysis is fixed (20261110). The full run takes under one minute on a laptop.
 
-## Citation
+## Quick start
+
+```bash
+python -m pip install -r requirements.txt
+./run_all.sh          # macOS, Linux or Git Bash
+run_all.bat           # Windows Command Prompt or Anaconda Prompt
+```
+
+The run script runs four steps:
+
+```bash
+python scripts/revision_model.py data results        # model, factorial design, Shapley, sensitivity, frontier
+python scripts/make_figures.py results figures        # Figures 1 to 7 (vector PDF and 600 dpi PNG)
+python scripts/make_supplement.py . supplementary     # Supplementary Material A and Table A2
+python scripts/check_run.py .                         # checks the run against the values in the manuscript
+```
+
+The last step prints one line per check and ends with "All checks passed". It stops with an error if any value differs from the manuscript.
+
+Python 3.10 or later is required. The figures use the Inter typeface when it is installed and fall back to DejaVu Sans otherwise. Only the font changes; the numbers do not.
 
 ## Repository structure
 
 ```
-malmo-consumption-gap/
-├── README.md                  ← this file
-├── LICENSE                    ← MIT licence
-├── requirements.txt           ← Python dependencies
+Beyond_the_Footprint/
+├── README.md
+├── LICENSE                     MIT licence (code)
+├── CITATION.cff
+├── requirements.txt
+├── run_all.sh                  reproduces revision 1 end to end (macOS, Linux)
+├── run_all.bat                 the same for Windows
 ├── .gitignore
 │
-├── source/                    ← original data
+├── source/                     original data
 │   ├── Scenario_analyzer_Malmo_february_2026_original.xlsx
 │   └── Household_consumption_expenditure_ESA2010_current_prices_SEK_million_by_purpose_COICOP_and_year.xlsx
 │
-├── data/                      ← cleaned analytical dataset (CSV)
-│   ├── baseline_categories.csv
-│   ├── category_domain_mapping.csv
-│   ├── scenario_parameters.csv
-│   ├── scenario_results.csv
-│   ├── category_results.csv
-│   ├── scenario_summary.csv
-│   ├── sensitivity_results.csv
-│   ├── domain_reduction_contributions_s4.csv
-│   ├── translation_dictionary.csv
-│   ├── validation_summary.csv
-│   └── coicop_activity_intensity_crosswalk.csv   ← baseline activity (M0) and
-│                                                     implied intensity (I0) per
-│                                                     category; see Section 3.6/3.8
+├── data/                       cleaned dataset (extracted from source/)
+│   ├── baseline_categories.csv                 110 categories, 2022 footprint (Consumption Compass 2.0)
+│   ├── scenario_parameters.csv                 reduction potentials and adoption parameters
+│   ├── coicop_activity_intensity_crosswalk.csv baseline activity and implied intensity per category
+│   ├── sensitivity_results.csv                 one-at-a-time tests of the submitted version
+│   └── other CSVs of the submitted version     scenario and category results, summary, validation,
+│                                               domain contributions, translation dictionary, notebook outputs
 │
 ├── scripts/
-│   ├── extract_clean_dataset_from_workbook.py     ← workbook → CSV extraction (also writes Table A1/A2)
-│   ├── build_activity_intensity_crosswalk.py      ← COICOP crosswalk + Table A2 enrichment
-│   └── generate_figures.py                        ← all manuscript figures
+│   ├── revision_model.py       revised lever-based model and all analyses (revision 1)
+│   ├── make_figures.py         Figures 1 to 7 (revision 1)
+│   ├── make_supplement.py      Supplementary Material A tables and notes (revision 1)
+│   ├── check_run.py            checks a run against the manuscript values (revision 1)
+│   ├── extract_clean_dataset_from_workbook.py   workbook to CSV extraction (submitted version)
+│   ├── build_activity_intensity_crosswalk.py    COICOP crosswalk (submitted version)
+│   └── generate_figures.py                      figures of the submitted version
 │
+├── results/                    outputs of revision_model.py
+├── figures/                    Figures 1 to 7 of the revised manuscript
+├── supplementary/              supplementary_R1.md and Table_A2_parameters_and_evidence.xlsx
 ├── notebooks/
-│   └── malmo_consumption_gap_reproducible_model.ipynb
-│
-├── figures/                   ← generated figures (PNG 300 DPI + PDF)
-│   ├── fig1_urban_consumption_gap_framework.{png,pdf}
-│   ├── fig2_baseline_footprint_top_categories.{png,pdf}
-│   ├── fig3_scenario_pathways_targets.{png,pdf}
-│   ├── fig4_domain_reduction_contributions_s4.{png,pdf}
-│   ├── fig5_sensitivity_tornado_2050.{png,pdf}
-│   └── supp_coverage_vs_residual_emissions.{png,pdf}
-│
-└── supplementary/             ← extended parameter tables
+│   └── malmo_consumption_gap_reproducible_model.ipynb   notebook of the submitted version
+└── archive/
+    ├── v1_figures/             figures of the submitted version
+    └── v1_supplementary/       Tables A1 and A2 of the submitted version
 ```
 
-## Quick start
+The revision 1 scripts read only four files in `data/`: `baseline_categories.csv`, `scenario_parameters.csv`, `coicop_activity_intensity_crosswalk.csv` and `sensitivity_results.csv`.
 
-### 1. Install dependencies
+## Submitted version
+
+The notebook and the three scripts marked "submitted version" reproduce the four scenarios of the project report from the source workbook. Their model code is unchanged from the original submission. The only change is where they write output. Their figures go to `archive/v1_figures/` and their tables to `archive/v1_supplementary/`, so they never overwrite the revision 1 outputs.
 
 ```bash
-pip install -r requirements.txt
+python scripts/extract_clean_dataset_from_workbook.py   # workbook to data/ (validated against the workbook results)
+python scripts/build_activity_intensity_crosswalk.py    # COICOP crosswalk (needs openpyxl)
+python scripts/generate_figures.py                      # figures of the submitted version
 ```
 
-### 2. Extract cleaned data from the source workbook
+The extraction reproduces the files in `data/` exactly, so running it before `run_all` does not change any revision 1 result. `generate_figures.py` also writes an interactive HTML figure if `plotly` is installed; otherwise it skips that figure.
 
-```bash
-python scripts/extract_clean_dataset_from_workbook.py
-```
+To run the notebook, open `notebooks/malmo_consumption_gap_reproducible_model.ipynb` in Jupyter or VS Code and run all cells. It validates the model against the workbook (maximum difference below 10⁻¹⁵ t).
 
-This reads the original Excel Scenario Analyzer workbook and produces all CSV files in `data/`, plus Table A1 and Table A2 in `supplementary/`. The script uses a minimal XML-based reader (no Excel or LibreOffice needed) and validates its outputs against cached workbook results. Expected validation: max absolute difference < 10⁻¹⁴ t CO₂e per capita for all four scenarios.
+## What the revised model does
 
-### 3. Build the activity-intensity crosswalk
+**Category emissions.** Each of the 110 categories has baseline emissions $E_{0,c}$. Behavioural change acts on activity, and technological change acts on intensity. Adoption of each change follows a logistic curve:
 
-```bash
-python scripts/build_activity_intensity_crosswalk.py
-```
+$$A_{c,y} = \frac{L_c}{1 + e^{-k_c (y - t_{0,c})}}$$
 
-This reads `source/Household_consumption_expenditure_ESA2010_current_prices_SEK_million_by_purpose_COICOP_and_year.xlsx` (Statistics Sweden, Statistikdatabasen table 000000SG — download link and details in the script docstring) together with `data/baseline_categories.csv`, produces `data/coicop_activity_intensity_crosswalk.csv`, and enriches `supplementary/table_a2_scenario4_parameters.csv` with six additional columns (activity metric, unit, baseline activity, baseline intensity, source, confidence flag). Must be run after step 2. Optional: the scenario results and figures do not depend on this step.
+Category emissions are:
 
-### 4. Generate all figures
+$$E_{c,y} = E_{0,c}\, v_y \left[ (1 - A^b R^b)\, I_{c,y} + \omega \left(\min(A^b, A^t) - A^b A^t\right) R^b R^t \right], \qquad I_{c,y} = \min\{ f_y,\ 1 - A^t R^t \}$$
 
-```bash
-python scripts/generate_figures.py
-```
+Here $f_y = (1-g)^{y-2025}$ is the reference trend of autonomous supply-chain decarbonisation (central $g$ = 1.5% per year). $v_y$ is consumption-volume growth. $\omega = 1$ (nested adoption) is the central, conservative case. The main text shows the simpler form with $\omega = 0$ and $v_y = 1$ (Eq. 4); the full form is Eqs. S1 and S2 in Supplementary Note S4. The urban consumption gap is $G_{s,y} = E_{s,y} - T_y$, with targets of 3.1 t CO2e per capita in 2030 and 1.0 t in 2050.
 
-This reads the CSV files in `data/` and produces all manuscript and supplementary figures in `figures/` (PNG at 300 DPI and vector PDF).
+**Five binary levers** form a 32-cell factorial design: coverage (nine hotspot categories or all categories), behaviour, technology (reference trend or deep supply-side decarbonisation), infrastructure (adoption ceilings capped at 75% or at coordinated values) and carbon capture in district heating. Six cells are named scenarios: reference, hotspot, lifestyle only, lifestyle + infrastructure, technology only and coordinated.
 
-### 5. Explore the model interactively
+**Analyses**
 
-Open the Jupyter notebook:
+- Shapley decomposition of the reduction by lever.
+- Hotspot ceiling.
+- One-at-a-time tests and a joint adverse case.
+- Variance-based global sensitivity analysis: twelve parameters, Saltelli design, Jansen estimators, 16,384 base samples.
+- Target-consistency frontier and technology thresholds.
+- Re-spending and volume tests for rebound.
+- A two-group equity test.
 
-```bash
-jupyter notebook notebooks/malmo_consumption_gap_reproducible_model.ipynb
-```
+**Validation.** Run with the original specification, the revised model reproduces the four project scenarios exactly. The values are 5.74/5.74, 5.25/4.10, 4.37/3.01 and 3.20/1.06 t in 2030/2050 (`results/v1_validation.csv`). `check_run.py` tests these values and the headline results.
 
-The notebook loads the cleaned data, implements the model equations, recalculates all scenario pathways, validates against the extracted results and reproduces all figures interactively.
+## Outputs and where they appear
 
-## Model overview
-
-The model calculates consumption-based emissions for Malmö under four transition scenarios over 2026 to 2050. It combines:
-
-- **Baseline**: 111 consumption categories covering 5,735 kg CO₂e per capita per year, derived from the SEI Consumption Compass v2.0 (Dawkins et al., 2024).
-- **Target pathway**: 3.1 t CO₂e per capita in 2030; 1.0 t CO₂e per capita in 2050 (linearly interpolated between milestones).
-- **Logistic adoption dynamics**: S-curve diffusion with category-specific maximum adoption (*L*), speed (*k*) and inflection year (*t₀*).
-- **Multiplicative reduction combination**: behavioural and technological potentials combined as *R* = 1 − (1 − *R_tech*)(1 − *R_beh*). This is not an accounting convention: it is what independent activity and intensity reductions imply mathematically once baseline emissions are expressed as activity × intensity (see below).
-- **Activity-intensity decomposition**: baseline emissions for each category are recovered as *M₀* (activity: SEK per capita, or km per capita for flights) × *I₀* (implied emission intensity), anchored in Statistics Sweden's national household expenditure by COICOP and, for flights, national air-travel distance. This is a baseline-level interpretive layer; it does not change any scenario result. See `data/coicop_activity_intensity_crosswalk.csv` and notebook Section 2b.
-- **Sensitivity analysis**: one-at-a-time variation of adoption ceilings, technology assumptions, CCS, food-system parameters, aviation and adoption timing.
-
-### Scenarios
-
-| Scenario | Transition logic | Active categories | Baseline coverage |
-|----------|-----------------|-------------------|-------------------|
-| S1 | Limited change | 0 active | 0% |
-| S2 | Hotspot focus | 9 active | 45% |
-| S3 | Lifestyle-centred | 31 active | 71% |
-| S4 | Coordinated transition | 109 active | 99.8% |
-
-### Key equations
-
-**Adoption** (logistic S-curve):
-
-*A_c(y) = L_c / [1 + exp(−k_c · (y − t₀_c))]*
-
-**Combined reduction** (multiplicative):
-
-*R_c = 1 − (1 − R_c,tech) · (1 − R_c,beh)*
-
-**Effective reduction in year *y***:
-
-*r_c(y) = R_c · A_c(y)*
-
-**Category emissions**:
-
-*E_c(y) = E₀_c · [1 − r_c(y)]*
-
-**Baseline activity-intensity decomposition** (interpretive; does not affect the equations above):
-
-*I₀_c = E₀_c / M₀_c*
-
-**Urban consumption gap**:
-
-*G_s(y) = E_s(y) − T(y)*
-
-## Data sources
-
-- **Consumption Compass v2.0** (Dawkins, E., Rahmati-Abkenar, M., Axelsson, K., Grah, R., Broekhoff, D., 2024): baseline household consumption-based emissions for Swedish municipalities at COICOP category level. Available at https://live.konsumtionskompassen.se
-- **Scenario Analyzer workbook**: developed in the RISE-Malmö Stad collaboration (August-December 2025), containing baseline data, scenario parameters, adoption dynamics and sensitivity test configurations.
-- **Statistics Sweden (2022)**: Household consumption expenditure (ESA2010) by purpose COICOP (1999), 1980-2021 [Data table 000000SG]. Statistikdatabasen. Used to recover baseline activity levels for expenditure-based categories.
-- **Larsson, J., Kamb, A., Nässén, J., Åkerman, J. (2018)**: Measuring greenhouse gas emissions from international air travel of a country's residents. *Environmental Impact Assessment Review*, 72, 137-144. Used to anchor the flights category to a physical activity metric (km per capita) rather than expenditure.
+| File in `results/` | Used in |
+|---|---|
+| `named_scenarios.csv`, `named_pathways.csv` | Table 3, Fig. 3 |
+| `factorial_32.csv`, `shapley.csv` | Fig. 4, Table A4 |
+| `cumulative_coverage.csv`, `hotspot_ceiling.json` | Section 4.1, Fig. 2 |
+| `domain_contributions_v2.csv` | Fig. 5 |
+| `oat_v2.csv` | Table 4, Table A1 |
+| `mc_summary.json`, `sobol.csv`, `mc_samples.csv` (regenerated, not tracked) | Section 4.3, Fig. 6 |
+| `frontier.npz`, `technology_thresholds.json` | Fig. 7, Sections 4.3 and 5.1 |
+| `equity_two_group.csv` | Sections 4.3 and 5.5 |
+| `category_inputs_v2.csv`, `v1_validation.csv` | Supplementary Tables A2 and A4 |
 
 ## Figures
 
-| Figure | Description |
-|--------|-------------|
-| Fig. 1 | Conceptual definition of the urban consumption gap |
-| Fig. 2 | Malmö baseline consumption footprint: top 25 categories |
-| Fig. 3 | Scenario pathways compared with Malmö's 2030 and 2050 targets |
-| Fig. 4 | Domain contributions to reductions in the coordinated transition |
-| Fig. 5 | Sensitivity of 2050 emissions to key assumptions (tornado chart) |
-| Supp.  | Scenario coverage vs residual emissions |
+The figures use the RISE colour scheme. They are sized for Elsevier column widths: 90 mm, 140 mm and 190 mm.
+
+| Figure | Content |
+|---|---|
+| Fig. 1 | The urban consumption gap as the residual after feasible action (schematic) |
+| Fig. 2 | Twenty largest categories and the hotspot ceiling |
+| Fig. 3 | Scenario pathways and Malmö's target pathway |
+| Fig. 4 | Shapley decomposition by lever, coloured by municipal reach |
+| Fig. 5 | Domain contributions to the 2050 reduction |
+| Fig. 6 | Global sensitivity analysis: output distributions and Sobol indices |
+| Fig. 7 | Target-consistency frontier |
+
+## Data sources
+
+- **Consumption Compass 2.0.** Category-level household footprints for Swedish municipalities. Dawkins et al. (2024), *Sustainable Production and Consumption* 52, 63–79, https://doi.org/10.1016/j.spc.2024.10.013.
+- **Scenario Analyzer workbook.** Developed in the RISE and City of Malmö project (August to December 2025). It is documented in Vejbrink et al. (2026), RISE Rapport 2026:42.
+- **Statistics Sweden (2022).** Household consumption expenditure (ESA2010) by purpose, COICOP, 1980–2021, table 000000SG.
+- **Larsson et al. (2018).** Air travel distance of Swedish residents. *Environmental Impact Assessment Review* 72, 137–144, https://doi.org/10.1016/j.eiar.2018.05.013.
+
+The baseline emissions derive from the Consumption Compass. Reuse of those values is subject to the terms of the Stockholm Environment Institute.
 
 ## Licence
 
-This repository is licensed under the MIT Licence. See [LICENSE](LICENSE).
+The code is released under the MIT Licence. See [LICENSE](LICENSE).
 
-## Contact
+## Citation
 
-
+Please cite the article and this repository (see `CITATION.cff`).

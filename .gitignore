@@ -1,31 +1,16 @@
-# Python
+# Large regenerated file (about 4 MB): rebuilt by scripts/revision_model.py
+results/mc_samples.csv
+
+# Python and notebook clutter
 __pycache__/
 *.pyc
-*.pyo
-*.egg-info/
-dist/
-build/
-.eggs/
-
-# Jupyter
 .ipynb_checkpoints/
-*.ipynb_checkpoints
+.venv/
+venv/
 
-# OS files
+# Operating system and editor files
 .DS_Store
 Thumbs.db
-*~
-
-# IDE
+desktop.ini
 .vscode/
-.idea/
-*.swp
-
-# Virtual environment
-venv/
-env/
-.env/
-
-# Temporary files
-*.tmp
-*.bak
+~$*

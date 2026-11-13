@@ -2,11 +2,14 @@
 """
 generate_figures.py
 ───────────────────
-Generates all manuscript and supplementary figures from the cleaned CSV data.
-Run from the repo root:  python scripts/generate_figures.py
+Generates all manuscript and supplementary figures of the SUBMITTED VERSION from
+the cleaned CSV data. Run from the repo root:  python scripts/generate_figures.py
+
+Revision 1 change: output goes to archive/v1_figures/, because figures/ now holds
+the revision 1 figures and fig1_urban_consumption_gap_framework uses the same name.
 
 Requires: numpy, pandas, matplotlib
-Outputs:  figures/fig[1-5]_*.{png,pdf} and figures/supp_*.{png,pdf}
+Outputs:  archive/v1_figures/fig[1-5]_*.{png,pdf} and archive/v1_figures/supp_*.{png,pdf}
 
 Figures:
   1. Urban consumption gap framework (conceptual schematic)
@@ -29,7 +32,7 @@ import matplotlib.ticker as mticker
 # ── Paths ─────────────────────────────────────────────────────────────────────
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = REPO_ROOT / 'data'
-FIG_DIR = REPO_ROOT / 'figures'
+FIG_DIR = REPO_ROOT / 'archive' / 'v1_figures'
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── Global style ──────────────────────────────────────────────────────────────
@@ -161,7 +164,7 @@ def fig1_conceptual():
     ax.set_xlim(2025, 2055)
     ax.set_ylim(0, 9.8)
     ax.set_xlabel('Year')
-    ax.set_ylabel('Consumption-based emissions\n(t CO\u2082e per capita per year)')
+    ax.set_ylabel('Consumption-based emissions\n(t CO₂e per capita per year)')
     ax.set_yticks([])
     ax.set_xticks([2025, 2030, 2035, 2040, 2045, 2050])
     ax.axhline(1.5, color='#dddddd', linewidth=0.5, linestyle=':', zorder=0)
@@ -185,8 +188,8 @@ def fig2_baseline():
     bars = ax.barh(y, df['baseline_kgco2e_per_capita'], color=colors, edgecolor='white', linewidth=0.5)
     ax.set_yticks(y)
     ax.set_yticklabels(df['category'], fontsize=8)
-    ax.set_xlabel('Baseline emissions (kg CO\u2082e per capita per year)')
-    ax.set_title("Malm\u00f6 baseline consumption footprint: top contributing categories")
+    ax.set_xlabel('Baseline emissions (kg CO₂e per capita per year)')
+    ax.set_title("Malmö baseline consumption footprint: top contributing categories")
     ax.grid(axis='x', alpha=0.25)
     for i, v in enumerate(df['baseline_kgco2e_per_capita']):
         ax.text(v + 8, i, f'{v:.0f}', va='center', fontsize=7)
@@ -234,8 +237,8 @@ def fig3_pathways():
     ax.set_ylim(0, 6.2)
     ax.set_xlim(2026, 2053)
     ax.set_xlabel('Year')
-    ax.set_ylabel('Consumption-based emissions\n(t CO\u2082e per capita per year)')
-    ax.set_title("Scenario pathways compared with Malm\u00f6's target pathway")
+    ax.set_ylabel('Consumption-based emissions\n(t CO₂e per capita per year)')
+    ax.set_title("Scenario pathways compared with Malmö's target pathway")
     ax.grid(axis='y', alpha=0.25)
     ax.legend(frameon=True, edgecolor='#cccccc', fancybox=False, loc='upper right')
 
@@ -255,7 +258,7 @@ def fig4_domain_reductions():
     ax.barh(y, df['reduction_tco2e_per_capita'], color=colors)
     ax.set_yticks(y)
     ax.set_yticklabels(df['domain'])
-    ax.set_xlabel('Reduction in 2050 (t CO\u2082e per capita per year)')
+    ax.set_xlabel('Reduction in 2050 (t CO₂e per capita per year)')
     ax.set_title('Domain contributions to reductions in the coordinated transition (Scenario 4)')
     ax.grid(axis='x', alpha=0.25)
     for i, (_, r) in enumerate(df.iterrows()):
@@ -264,7 +267,7 @@ def fig4_domain_reductions():
 
     # Annotate total
     total = df['reduction_tco2e_per_capita'].sum()
-    ax.text(0.97, 0.05, f'Total reduction: {total:.2f} t CO\u2082e/cap',
+    ax.text(0.97, 0.05, f'Total reduction: {total:.2f} t CO₂e/cap',
             transform=ax.transAxes, ha='right', fontsize=9, fontstyle='italic', color='#444444')
 
     savefig('fig4_domain_reduction_contributions_s4')
@@ -286,7 +289,7 @@ def fig5_sensitivity():
     ax.axvline(0, color='black', linewidth=1)
     ax.set_yticks(y)
     ax.set_yticklabels(df['variant'], fontsize=8)
-    ax.set_xlabel('Change in 2050 emissions relative to Scenario 4\n(t CO\u2082e per capita per year)')
+    ax.set_xlabel('Change in 2050 emissions relative to Scenario 4\n(t CO₂e per capita per year)')
     ax.set_title('Sensitivity of the coordinated transition pathway')
     ax.grid(axis='x', alpha=0.25)
     for i, d in enumerate(deltas):
@@ -298,7 +301,7 @@ def fig5_sensitivity():
     base_row = sensitivity[sensitivity['variant_id'] == 'base']
     if len(base_row):
         base_val = base_row['emissions_2050_tco2e_per_capita'].values[0]
-        ax.text(0.97, 0.97, f'Scenario 4 base: {base_val:.3f} t CO\u2082e/cap',
+        ax.text(0.97, 0.97, f'Scenario 4 base: {base_val:.3f} t CO₂e/cap',
                 transform=ax.transAxes, ha='right', va='top', fontsize=8.5,
                 fontstyle='italic', color='#444444')
 
@@ -321,7 +324,7 @@ def supp_coverage():
     ax.set_xlim(-3, 108)
     ax.set_ylim(0, 6.2)
     ax.set_xlabel('Share of baseline footprint actively addressed (%)')
-    ax.set_ylabel('2050 residual emissions\n(t CO\u2082e per capita per year)')
+    ax.set_ylabel('2050 residual emissions\n(t CO₂e per capita per year)')
     ax.set_title('Scenario coverage and residual emissions')
     ax.grid(alpha=0.25)
     ax.legend(frameon=True, edgecolor='#cccccc', fancybox=False)
@@ -397,8 +400,8 @@ def supp_activity_intensity():
     ax.set_xlim(x_lo, x_hi)
     ax.set_ylim(y_lo, y_hi)
     ax.set_xlabel('Baseline activity, $M_{0,c}$ (SEK per capita per year, 2021)')
-    ax.set_ylabel('Baseline intensity, $I_{0,c}$ (kg CO\u2082e per SEK)')
-    ax.set_title('Baseline emissions as activity \u00d7 intensity, by category')
+    ax.set_ylabel('Baseline intensity, $I_{0,c}$ (kg CO₂e per SEK)')
+    ax.set_title('Baseline emissions as activity × intensity, by category')
     ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: f'{int(v):,}'))
     ax.grid(alpha=0.2, which='both')
 
@@ -407,7 +410,7 @@ def supp_activity_intensity():
               edgecolor='#cccccc', title='Domain', title_fontsize=8, markerscale=0.7)
 
     ax.text(0.015, 0.02,
-            'Point size \u221d baseline emissions. Dashed lines are constant-emission contours (M\u00d7I).\n'
+            'Point size ∝ baseline emissions. Dashed lines are constant-emission contours (M×I).\n'
             'Flights excluded: activity measured in km, not SEK (see Section 3.8).',
             transform=ax.transAxes, fontsize=7, color='#777777', va='bottom', ha='left')
 
@@ -479,9 +482,9 @@ def supp_activity_intensity_baseline_interactive():
         hover = [
             f"<b>{cat}</b><br>"
             f"Domain: {domain}<br>"
-            f"Baseline emissions: {e:.2f} kg CO\u2082e/cap<br>"
-            f"Activity (M\u2080): {m:,.0f} SEK/cap<br>"
-            f"Intensity (I\u2080): {i:.4f} kg CO\u2082e/SEK<br>"
+            f"Baseline emissions: {e:.2f} kg CO₂e/cap<br>"
+            f"Activity (M₀): {m:,.0f} SEK/cap<br>"
+            f"Intensity (I₀): {i:.4f} kg CO₂e/SEK<br>"
             f"COICOP code(s): {coic}<br>"
             f"Match quality: {flag}"
             for cat, e, m, i, coic, flag in zip(
@@ -515,23 +518,23 @@ def supp_activity_intensity_baseline_interactive():
         )
 
     fig.update_xaxes(
-        title_text='Baseline activity, M\u2080,c (SEK per capita per year, 2021)',
+        title_text='Baseline activity, M₀,c (SEK per capita per year, 2021)',
         type='log', range=[np.log10(x_lo), np.log10(x_hi)], showgrid=True, gridcolor='#eeeeee',
     )
     fig.update_yaxes(
-        title_text='Baseline intensity, I\u2080,c (kg CO\u2082e per SEK)',
+        title_text='Baseline intensity, I₀,c (kg CO₂e per SEK)',
         type='log', range=[np.log10(y_lo), np.log10(y_hi)], showgrid=True, gridcolor='#eeeeee',
     )
     fig.update_layout(
-        title='Baseline emissions as activity \u00d7 intensity, by category (hover to explore)',
+        title='Baseline emissions as activity × intensity, by category (hover to explore)',
         template='plotly_white', width=980, height=700,
         legend=dict(title='Domain'),
         hoverlabel=dict(bgcolor='white', font_size=12, font_family='Arial'),
         margin=dict(t=70, r=140),
         annotations=list(fig.layout.annotations) + [dict(
             x=0.01, y=-0.13, xref='paper', yref='paper', showarrow=False,
-            text='Bubble size \u221d baseline emissions. Dashed lines are constant-emission contours '
-                 '(M\u00d7I). Flights excluded: activity measured in km, not SEK (see Section 3.8).',
+            text='Bubble size ∝ baseline emissions. Dashed lines are constant-emission contours '
+                 '(M×I). Flights excluded: activity measured in km, not SEK (see Section 3.8).',
             font=dict(size=10, color='#777777'), xanchor='left',
         )],
     )
